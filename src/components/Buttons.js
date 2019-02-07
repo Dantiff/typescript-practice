@@ -16,26 +16,26 @@ const Event = props => (
 // Create and export the component
 export default ({ location, match, ...props }) => (
   <div className="friends">
-    <h2>Upcoming Events</h2>
-    <p>These events are coming up soon...</p>
-    <ul>
+    <h2>Sample Button Componnets</h2>
+    <p>Below is a sample implementation of the button components:</p>
+    <ul className="demo__links">
       <li>
-        <NavLink to={`/standard-buttons`}>Dance</NavLink>
+        <NavLink to={`/buttons/standard-buttons`}>Standard Buttons</NavLink>
       </li>
       <li>
-        <NavLink to={`/outline-buttons`}>Cookout</NavLink>
+        <NavLink to={`/buttons/outline-buttons`}>Outline Buttons</NavLink>
       </li>
     </ul>
 
     <Switch>
       <CrumbRoute
         title="Standard Buttons"
-        path={`/standard-buttons`}
+        path={`/buttons/standard-buttons`}
         render={props => <Event name="Standard Buttons" />}
       />
       <CrumbRoute
         title="Outline Buttons"
-        path={`/outline-buttons`}
+        path={`/buttons/outline-buttons`}
         render={props => <Event name="Outline Buttons" />}
       />
     </Switch>

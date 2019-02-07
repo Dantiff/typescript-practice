@@ -15,44 +15,53 @@ export default class App extends React.Component {
    * @return {[{}]}
    */
   handleCrumbs = crumbs => {
+    console.log('we handle crumbs?');
     // Remove first crumb
     return crumbs.filter((c, i) => i !== 0);
   };
   render() {
     return (
-      <div className="demo">
-        <Breadcrumbs className="demo__crumbs" />
-        <main className="demo__main">
-          <h1>Breadcrumbs Demo</h1>
-          <p>
-            Use the links below to jump around the site and watch the
-            breadcrumbs update...
-          </p>
-          <ul className="demo__links">
-            <li>
-              <NavLink to="/home">Cast UI Components</NavLink>
-            </li>
-            <li>
-              <NavLink to="/buttons">Buttons</NavLink>
-            </li>
-          </ul>
+      <div className="App">
+        <header className="App-header">
+          <main className="demo__main">
+            <h1>TKXS Cast UI</h1>
+            <p>
+              Components in this library must receive a theme object as
+              documented. To achieve this, use the ThemeProvider, which is
+              passed on from styled-components. If no theme is provided,
+              components will fall back to a default theme.
+            </p>
+            <Breadcrumbs className="demo__crumbs" />
+            <ul className="demo__links">
+              <li>
+                <NavLink to="/all-components">All Components</NavLink>
+              </li>
+              <li>
+                <NavLink to="/buttons">Buttons</NavLink>
+              </li>
+            </ul>
 
-          <div className="demo__content">
-            <Switch>
-              <Route
-                path="/"
-                exact
-                render={props => <span>Home content...</span>}
-              />
-              <CrumbRoute title="Home" path="/home" component={Main} />
-              <CrumbRoute title="Buttons" path="/buttons" component={Buttons} />
-              <CrumbRoute
-                title="404 Not Found"
-                render={props => <span>Page not found...</span>}
-              />
-            </Switch>
-          </div>
-        </main>
+            <div className="demo__content">
+              <Switch>
+                <Route path="/" exact component={Main} />
+                <CrumbRoute
+                  title="Home"
+                  path="/all-components"
+                  component={Main}
+                />
+                <CrumbRoute
+                  title="Buttons"
+                  path="/buttons"
+                  component={Buttons}
+                />
+                <CrumbRoute
+                  title="404 Not Found"
+                  render={props => <span>Page not found...</span>}
+                />
+              </Switch>
+            </div>
+          </main>
+        </header>
       </div>
     );
   }
