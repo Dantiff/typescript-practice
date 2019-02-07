@@ -1,110 +1,59 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import {
-  Button,
-  Input,
-  Themes,
-  Panel,
-  Spinner,
-  CopyToClipboard,
-} from '@tkxs/cast-ui';
+// Import External Dependencies
+import React from 'react';
+import { Switch, NavLink, Route } from 'react-router-dom';
 
-class App extends Component {
-  componentDidMount() {
-    console.log('We mounted app', Themes);
-  }
-  textClicks(e) {
-    CopyToClipboard.prototype.copyToClipboard(e);
-  }
+// Import Components
+import { Breadcrumbs, CrumbRoute } from '@tkxs/cast-ui';
+import Main from './components/Main';
+import Buttons from './components/Buttons';
+
+// Create and export the component
+export default class App extends React.Component {
+  /**
+   * Handle breadcrumb render
+   * @param {[{}]} crumbs
+   * @return {[{}]}
+   */
+  handleCrumbs = crumbs => {
+    // Remove first crumb
+    return crumbs.filter((c, i) => i !== 0);
+  };
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <div>
-            <br />
-            <br />
-            <CopyToClipboard
-              copyText="Some text that is usually copied to clipboard."
-              copyContainerClass="copy-container"
-              background="disabledBackground"
-              includeCopyButton={true}
-              copyButtonText="copy"
-              copyButtonClass="copy-button"
-              theme={Themes.defaultTheme}
-            />
-            <br />
-            <Button
-              label={'Enroll'}
-              btnStyle="success"
-              theme={Themes.defaultTheme}
-              onClick={CopyToClipboard.copyToClipboard}>
-              {' '}
-              Greetings{' '}
-            </Button>
-            <br />
-            <button type="button" onClick={CopyToClipboard.copyToClipboard}>
-              Copy Me
-            </button>
-            <br />
+      <div className="demo">
+        <Breadcrumbs className="demo__crumbs" />
+        <main className="demo__main">
+          <h1>Breadcrumbs Demo</h1>
+          <p>
+            Use the links below to jump around the site and watch the
+            breadcrumbs update...
+          </p>
+          <ul className="demo__links">
+            <li>
+              <NavLink to="/home">Cast UI Components</NavLink>
+            </li>
+            <li>
+              <NavLink to="/buttons">Buttons</NavLink>
+            </li>
+          </ul>
 
-            <button
-              type="button"
-              onClick={() =>
-                CopyToClipboard.copyToClipboard('Some Custom Text')
-              }>
-              Navigate
-            </button>
-            <br />
-            <br />
-
-            <a
-              href="#"
-              onClick={() =>
-                CopyToClipboard.copyToClipboard(
-                  'https://www.npmjs.com/package/@tkxs/cast-ui',
-                )
-              }>
-              Copy Me
-            </a>
-            <br />
-            <br />
-            <Input
-              inputSize="lg"
-              disabled={false}
-              type="text"
-              required={false}
-              autoComplete="on"
-              maxLength="1000"
-              theme={Themes.defaultTheme}
-            />
-            <br />
-            <br />
-            <Panel
-              theme={Themes.defaultTheme}
-              title={'Enroll'}
-              isCollapsed
-              collapsible
-              panelStyle="success">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-              beatae nostrum quo fuga iste reprehenderit ab fugit, soluta ea!
-              Culpa, dignissimos dolores! Delectus fugiat numquam doloremque
-              consequuntur tempora ipsam excepturi. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Saepe, reiciendis culpa incidunt
-              corporis dolorem eum ullam totam cum iusto voluptate, maxime modi
-              porro aperiam eveniet tempore ea? Quidem, at harum!
-            </Panel>
-            <Spinner
-              color="lightGray"
-              size={40}
-              animationSpeed={2}
-              theme={Themes.defaultTheme}
-            />
+          <div className="demo__content">
+            <Switch>
+              <Route
+                path="/"
+                exact
+                render={props => <span>Home content...</span>}
+              />
+              <CrumbRoute title="Home" path="/home" component={Main} />
+              <CrumbRoute title="Buttons" path="/buttons" component={Buttons} />
+              <CrumbRoute
+                title="404 Not Found"
+                render={props => <span>Page not found...</span>}
+              />
+            </Switch>
           </div>
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
+        </main>
       </div>
     );
   }
 }
-
-export default App;

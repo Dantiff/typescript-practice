@@ -7,14 +7,14 @@ import './App.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { ThemeProvider } from 'styled-components';
-import { Themes } from '@tkxs/cast-ui';
+import { Themes, CrumbRoute } from '@tkxs/cast-ui';
 const newHistory = createBrowserHistory();
 
 ReactDOM.render(
   <BrowserRouter>
     <ThemeProvider theme={Themes.defaultTheme}>
       <Router history={newHistory}>
-        <Route path="/" component={App} />
+        <CrumbRoute path="/" component={App} />
       </Router>
     </ThemeProvider>
   </BrowserRouter>,
