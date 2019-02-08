@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 import './App.css';
 import App from './App';
@@ -14,7 +14,7 @@ ReactDOM.render(
   <BrowserRouter>
     <ThemeProvider theme={Themes.defaultTheme}>
       <Router history={newHistory}>
-        <CrumbRoute path="/" component={App} />
+        <CrumbRoute path="/" title="Home" component={App} />
       </Router>
     </ThemeProvider>
   </BrowserRouter>,

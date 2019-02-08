@@ -3,7 +3,7 @@ import React from 'react';
 import { Switch, NavLink, Route } from 'react-router-dom';
 
 // Import Components
-import { Breadcrumbs, CrumbRoute } from '@tkxs/cast-ui';
+import { Breadcrumbs, CrumbRoute, Themes } from '@tkxs/cast-ui';
 import Main from './components/Main';
 import Buttons from './components/Buttons';
 
@@ -31,7 +31,12 @@ export default class App extends React.Component {
               passed on from styled-components. If no theme is provided,
               components will fall back to a default theme.
             </p>
-            <Breadcrumbs className="demo__crumbs" />
+            <Breadcrumbs
+              BreadcrumbsContainer="nav"
+              BreadcrumbItemContainer="span"
+              separator="span"
+              theme={Themes.defaultTheme}
+            />
             <ul className="demo__links">
               <li>
                 <NavLink to="/all-components">All Components</NavLink>
@@ -43,9 +48,9 @@ export default class App extends React.Component {
 
             <div className="demo__content">
               <Switch>
-                <Route path="/" exact component={Main} />
+                <Route path="/" title="Home" exact component={Main} />
                 <CrumbRoute
-                  title="Home"
+                  title="All Components"
                   path="/all-components"
                   component={Main}
                 />

@@ -55,7 +55,7 @@ class Main extends Component {
           <br />
 
           <a
-            href="#"
+            href="/#"
             onClick={() =>
               CopyToClipboard.copyToClipboard(
                 'https://www.npmjs.com/package/@tkxs/cast-ui',
