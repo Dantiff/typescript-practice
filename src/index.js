@@ -1,20 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 import './App.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { ThemeProvider } from 'styled-components';
-import { Themes, CrumbRoute } from '@tkxs/cast-ui';
+import { Themes } from '@tkxs/cast-ui';
 const newHistory = createBrowserHistory();
 
 ReactDOM.render(
   <BrowserRouter>
     <ThemeProvider theme={Themes.defaultTheme}>
       <Router history={newHistory}>
-        <CrumbRoute path="/" title="Home" component={App} />
+        <Route path="/" title="Home" component={App} />
       </Router>
     </ThemeProvider>
   </BrowserRouter>,

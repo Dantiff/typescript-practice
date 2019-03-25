@@ -1,24 +1,9 @@
-// Import External Dependencies
 import React from 'react';
 import { Switch, NavLink, Route } from 'react-router-dom';
-
-// Import Components
-import { Breadcrumbs, CrumbRoute, Themes } from '@tkxs/cast-ui';
 import Main from './components/Main';
 import Buttons from './components/Buttons';
 
-// Create and export the component
 export default class App extends React.Component {
-  /**
-   * Handle breadcrumb render
-   * @param {[{}]} crumbs
-   * @return {[{}]}
-   */
-  handleCrumbs = crumbs => {
-    console.log('we handle crumbs?');
-    // Remove first crumb
-    return crumbs.filter((c, i) => i !== 0);
-  };
   render() {
     return (
       <div className="App">
@@ -31,12 +16,12 @@ export default class App extends React.Component {
               passed on from styled-components. If no theme is provided,
               components will fall back to a default theme.
             </p>
-            <Breadcrumbs
+            {/* <Breadcrumbs
               BreadcrumbsContainer="nav"
               BreadcrumbItemContainer="span"
               separator="span"
               theme={Themes.defaultTheme}
-            />
+            /> */}
             <ul className="demo__links">
               <li>
                 <NavLink to="/all-components">All Components</NavLink>
@@ -49,17 +34,13 @@ export default class App extends React.Component {
             <div className="demo__content">
               <Switch>
                 <Route path="/" title="Home" exact component={Main} />
-                <CrumbRoute
+                <Route
                   title="All Components"
                   path="/all-components"
                   component={Main}
                 />
-                <CrumbRoute
-                  title="Buttons"
-                  path="/buttons"
-                  component={Buttons}
-                />
-                <CrumbRoute
+                <Route title="Buttons" path="/buttons" component={Buttons} />
+                <Route
                   title="404 Not Found"
                   render={props => <span>Page not found...</span>}
                 />
