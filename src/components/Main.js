@@ -4,10 +4,12 @@ import {
   Alert,
   Badge,
   Button,
+  Card,
   Input,
   Themes,
   Panel,
   Spinner,
+  Title,
   CopyToClipboard,
 } from '@tkxs/cast-ui';
 import styled from 'styled-components';
@@ -33,6 +35,22 @@ class Main extends Component {
           <br />
           <br />
           <Button> Greetings </Button>
+          <br />
+          <br />
+          <Card cardStyle="default" highlightBorder="top" bgColor="#FFFFFF">
+            <Title>Card Header</Title>
+            <div>
+              <b>Nullam mattis egestas tortor</b>
+              <p>Aliquam porttitor aliquet fringilla.</p>
+              <b>Nullam mattis egestas tortor</b>
+              <p>
+                Duis pellentesque, risus id faucibus porttitor,
+                <br />
+                dolor arcu tristique ligula, id tincidunt odio nisl id tellus.
+                dolor arcu tristique ligula, id tincidunt odio nisl id tellus.
+              </p>
+            </div>
+          </Card>
           <br />
           <br />
           <CopyToClipboard
