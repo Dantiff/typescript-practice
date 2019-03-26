@@ -1,11 +1,6 @@
-// Import External Dependencies
 import React from 'react';
-import { Switch, NavLink } from 'react-router-dom';
+import { Switch, NavLink, Route } from 'react-router-dom';
 
-// Import Components
-import { CrumbRoute } from '@tkxs/cast-ui';
-
-// Define a small event page
 const Event = props => (
   <div className="event">
     <h3>{props.name}</h3>
@@ -13,7 +8,6 @@ const Event = props => (
   </div>
 );
 
-// Create and export the component
 export default ({ location, match, ...props }) => (
   <div className="friends">
     <h2>Sample Button Componnets</h2>
@@ -28,12 +22,12 @@ export default ({ location, match, ...props }) => (
     </ul>
 
     <Switch>
-      <CrumbRoute
+      <Route
         title="Standard Buttons"
         path={`/buttons/standard-buttons`}
         render={props => <Event name="Standard Buttons" />}
       />
-      <CrumbRoute
+      <Route
         title="Outline Buttons"
         path={`/buttons/outline-buttons`}
         render={props => <Event name="Outline Buttons" />}

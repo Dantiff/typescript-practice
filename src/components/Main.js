@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import {
+  Alert,
+  Badge,
   Button,
   Input,
   Themes,
@@ -8,6 +10,11 @@ import {
   Spinner,
   CopyToClipboard,
 } from '@tkxs/cast-ui';
+import styled from 'styled-components';
+
+// const SButton = styled(Button)`
+//   background: red;
+// `;
 
 class Main extends Component {
   componentDidMount() {
@@ -20,6 +27,12 @@ class Main extends Component {
     return (
       <div>
         <div>
+          <Alert lightMode> Hey! I am a message </Alert>
+          <br />
+          <Badge>123</Badge>
+          <br />
+          <br />
+          <Button> Greetings </Button>
           <br />
           <br />
           <CopyToClipboard
@@ -32,26 +45,6 @@ class Main extends Component {
             theme={Themes.defaultTheme}
           />
           <br />
-          <Button
-            label={'Enroll'}
-            btnStyle="success"
-            theme={Themes.defaultTheme}
-            onClick={CopyToClipboard.copyToClipboard}>
-            {' '}
-            Greetings{' '}
-          </Button>
-          <br />
-          <button type="button" onClick={CopyToClipboard.copyToClipboard}>
-            Copy Me
-          </button>
-          <br />
-
-          <button
-            type="button"
-            onClick={() => CopyToClipboard.copyToClipboard('Some Custom Text')}>
-            Navigate
-          </button>
-          <br />
           <br />
 
           <a
@@ -60,7 +53,8 @@ class Main extends Component {
               CopyToClipboard.copyToClipboard(
                 'https://www.npmjs.com/package/@tkxs/cast-ui',
               )
-            }>
+            }
+          >
             Copy Me
           </a>
           <br />
@@ -81,7 +75,8 @@ class Main extends Component {
             title={'Enroll'}
             isCollapsed
             collapsible
-            panelStyle="success">
+            panelStyle="success"
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
             beatae nostrum quo fuga iste reprehenderit ab fugit, soluta ea!
             Culpa, dignissimos dolores! Delectus fugiat numquam doloremque

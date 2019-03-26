@@ -6,8 +6,9 @@ import createBrowserHistory from 'history/createBrowserHistory';
 import './App.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { ThemeProvider } from 'styled-components';
-import { Themes } from '@tkxs/cast-ui';
+// import { ThemeProvider } from 'styled-components';
+// import { Themes } from '@tkxs/cast-ui';
+import { Themes, ThemeProvider } from '@tkxs/cast-ui';
 const newHistory = createBrowserHistory();
 
 ReactDOM.render(

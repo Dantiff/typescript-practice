@@ -2,7 +2,6 @@ import React from 'react';
 import { Switch, NavLink, Route } from 'react-router-dom';
 import Main from './components/Main';
 import Buttons from './components/Buttons';
-
 export default class App extends React.Component {
   render() {
     return (
