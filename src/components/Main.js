@@ -32,11 +32,24 @@ import {
   Tab,
   Textarea,
   Title,
+  Toggle,
+  Tooltip,
   CopyToClipboard,
+  SectionHeader,
+  SubHeading,
+  Display,
+  Headline,
+  SubTitle,
+  Caption,
+  Link,
+  Digits,
   styled,
 } from '@tkxs/cast-ui';
 import Icon from 'react-icons-kit';
 import { userSecret } from 'react-icons-kit/fa/userSecret';
+import { ic_keyboard_arrow_down as IKAD } from 'react-icons-kit/md/ic_keyboard_arrow_down';
+import { ic_add as icAdd } from 'react-icons-kit/md/ic_add';
+import { info } from 'react-icons-kit/fa/info';
 // import styled from 'styled-components';
 
 const STitle = styled(Title)`
@@ -58,17 +71,62 @@ class Main extends Component {
       <div>
         <div>
           <br />
+
+          <SectionHeader>Section header</SectionHeader>
+          <Display>Display</Display>
+          <Headline>Headline</Headline>
+          <Title>Title</Title>
+          <SubTitle>Etiam mauris tellus</SubTitle>
+          <p>
+            Etiam ullamcorper, metus sed luctus auctor, tortor lorem auctor
+            quam, ut condimentum massa tellus at turpis.
+          </p>
+          <Caption>Use for hero images and website headers</Caption>
+          <Link solo={true} href="https://www.tkxs.com" target="_blank">
+            Read More
+          </Link>
+          <br />
+          <SubHeading>Subheader</SubHeading>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur{' '}
+            <Link href="https://theuselessweb.com/" target="_blank">
+              unvisited link in text
+            </Link>{' '}
+            over a{' '}
+            <Link href="https://www.tkxs.com" target="_blank">
+              visited link in text
+            </Link>{' '}
+            elit.
+          </p>
+          <Button btnStyle="primary">Read More Button</Button>
+          <br />
+          <br />
+          <br />
+          {/* <Tooltip content="Tooltip text appears here">
+            <span>
+              <Button btnStyle="primary" outline={true}>
+                Read More
+              </Button>
+            </span>
+          </Tooltip> */}
+          <Digits>$25,855.90</Digits>
+          <br />
+          {/* <Tooltip content={`String Tooltip`} isVisible={true} trigger="manual">
+            <button>This button has a controlled tooltip</button>
+          </Tooltip> */}
+          <br />
+          <div>
+            <Toggle id="toggleId" value="1">
+              One
+            </Toggle>
+          </div>
+          <br />
           <Textarea
             id="myTextarea"
-            textareaSize="md"
-            disabled={false}
-            invalid={false}
-            invalidText="A valid value is required"
-            maxLength={1000}
             placeholder="Placeholder Text"
             required={false}
             rows={8}
-            cols={60}
+            cols={80}
           />
           <br />
           <Tabs defaultIndex={2}>
@@ -214,18 +272,7 @@ class Main extends Component {
             <DraggableInfo>
               <IconButton
                 rounded
-                icon={{
-                  viewBox: '0 0 640 1792',
-                  children: [
-                    {
-                      name: 'path',
-                      attribs: {
-                        d:
-                          'M640 1344v128q0 26-19 45t-45 19h-512q-26 0-45-19t-…',
-                      },
-                    },
-                  ],
-                }}
+                icon={info}
                 iconsize={10}
                 pixelbuttonsize={18}
                 btnSize="sm"
@@ -336,15 +383,7 @@ class Main extends Component {
             <DraggableFooter>
               <IconButton
                 rounded
-                icon={{
-                  viewBox: '0 0 24 24',
-                  children: [
-                    {
-                      name: 'path',
-                      attribs: { d: 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z' },
-                    },
-                  ],
-                }}
+                icon={icAdd}
                 iconsize={20}
                 pixelbuttonsize={32}
                 btnSize="sm"
