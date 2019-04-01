@@ -13,7 +13,7 @@ const newHistory = createBrowserHistory();
 
 ReactDOM.render(
   <BrowserRouter>
-    <ThemeProvider theme={Themes.defaultTheme}>
+    <ThemeProvider theme={Themes.cobaltTheme}>
       <Router history={newHistory}>
         <Route path="/" title="Home" component={App} />
       </Router>

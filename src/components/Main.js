@@ -279,7 +279,7 @@ class Main extends Component {
               />
               To create a new group, drag one qualification on top of another
             </DraggableInfo>
-            <DraggableParent.ParentContainer
+            {/* <DraggableParent.ParentContainer
               parentActive={false}
               parenthandlesize={30}
               showparenthandle
@@ -378,7 +378,7 @@ class Main extends Component {
                   btnStyle="primary"
                 />
               </DraggableParent.ParentRightContent>
-            </DraggableParent.ParentContainer>
+            </DraggableParent.ParentContainer> */}
             <DraggableFooter>
               <IconButton
                 rounded
