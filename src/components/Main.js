@@ -43,14 +43,14 @@ import {
   Caption,
   Link,
   Digits,
-  styled,
+  // styled,
 } from '@tkxs/cast-ui';
 import Icon from 'react-icons-kit';
 import { userSecret } from 'react-icons-kit/fa/userSecret';
 import { ic_keyboard_arrow_down as IKAD } from 'react-icons-kit/md/ic_keyboard_arrow_down';
 import { ic_add as icAdd } from 'react-icons-kit/md/ic_add';
 import { info } from 'react-icons-kit/fa/info';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
 const STitle = styled(Title)`
   background: red;
