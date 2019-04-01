@@ -19,9 +19,18 @@ import {
   Navbar,
   Nav,
   Pagination,
+  Popover,
+  RadioButton,
+  RadioButtonGroup,
   Themes,
   Panel,
+  Select,
   Spinner,
+  Tabs,
+  TabList,
+  TabPanel,
+  Tab,
+  Textarea,
   Title,
   CopyToClipboard,
   styled,
@@ -49,10 +58,126 @@ class Main extends Component {
       <div>
         <div>
           <br />
-          <Pagination
-            pageCount={10}
-            onPageChange={() => console.log('Pagination Page changed')}
+          <Textarea
+            id="myTextarea"
+            textareaSize="md"
+            disabled={false}
+            invalid={false}
+            invalidText="A valid value is required"
+            maxLength={1000}
+            placeholder="Placeholder Text"
+            required={false}
+            rows={8}
+            cols={60}
           />
+          <br />
+          <Tabs defaultIndex={2}>
+            <TabList>
+              <Tab title="Tab Page 01" />
+              <Tab title="Tab Page 02" disabled />
+              <Tab title="Tab Page 03" />
+            </TabList>
+            <TabPanel>
+              <h2>Any content 1</h2>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </TabPanel>
+            <TabPanel>
+              <h2>Any content 2</h2>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo inventore veritatis et quasi architecto beatae vitae
+              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
+              est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+              velit, sed quia non numquam eius modi tempora incidunt ut labore
+              et dolore magnam aliquam quaerat voluptatem.
+            </TabPanel>
+            <TabPanel>
+              <h2>Any content 3</h2>
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui
+              blanditiis praesentium voluptatum deleniti atque corrupti quos
+              dolores et quas molestias excepturi sint occaecati cupiditate non
+              provident, similique sunt in culpa qui officia deserunt mollitia
+              animi, id est laborum et dolorum fuga. Et harum quidem rerum
+              facilis est et expedita distinctio. Nam libero tempore, cum soluta
+              nobis est eligendi optio cumque nihil impedit quo minus id quod
+              maxime placeat facere possimus, omnis voluptas assumenda est,
+              omnis dolor repellendus.
+            </TabPanel>
+          </Tabs>
+          <br />
+          <Spinner />
+          <br />
+          <Select
+            id="mySelect"
+            disabled={false}
+            inputSize="md"
+            invalid={false}
+            invalidText="A valid value is required"
+            options={[
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ]}
+            style={{ background: 'blue' }}
+          />
+          <br />
+          <RadioButtonGroup name="myRadioButtonGroup" defaultChecked="1">
+            <RadioButton id="myInput1" disabled={false} value="1">
+              One
+            </RadioButton>
+            <RadioButton id="myInput2" disabled={false} value="2">
+              Two
+            </RadioButton>
+          </RadioButtonGroup>
+          <br />
+          <RadioButton
+            id="myInput12"
+            value="1"
+            defaultChecked
+            className="radio-1"
+            onChange={(value, name, e) =>
+              console.log('RadioBtn changed ', value, name, e)
+            }
+          >
+            One
+          </RadioButton>
+          <br />
+          {/* <Popover
+            content={'String content'}
+            arrow={false}
+            size="regular"
+            placement="bottom-start"
+          >
+            <span>
+              <Button btnStyle="primary">
+                This button has a controlled popover
+              </Button>
+            </span>
+          </Popover> */}
+          <br />
+          <Panel
+            name="Catchy Name"
+            title="Catchy title"
+            bodyBackgroundColor="red"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+            beatae nostrum quo fuga iste reprehenderit ab fugit, soluta ea!
+            Culpa, dignissimos dolores! Delectus fugiat numquam doloremque
+            consequuntur tempora ipsam excepturi. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Saepe, reiciendis culpa incidunt
+            corporis dolorem eum ullam totam cum iusto voluptate, maxime modi
+            porro aperiam eveniet tempore ea? Quidem, at harum!
+          </Panel>
+          <br />
+          <Pagination pageCount={10} />
           <br />
           <Navbar
             background="lightBackground"
